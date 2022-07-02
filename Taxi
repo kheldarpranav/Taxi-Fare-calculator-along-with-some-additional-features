@@ -1,1 +1,146 @@
+#include<stdio.h>
+#include<conio.h>
 
+int main(int argc, char const *argv[])
+{
+    int AC(),NAC();
+    char ch,dw;
+ do
+ {
+ printf("\n-----------------------------------------------Welcome----------------------------------------");
+ printf("\n Enter [A] For AC OR [N] For Non-AC:-");
+ scanf("%s",&ch);
+ printf("\n----------------------------------------------------------------------------------------------");
+ switch(ch)
+ {
+    case 'A' :AC();
+    break;
+
+    case 'N' :NAC();
+    break;
+ }
+ printf("\n----****----------------------------------*****------------------------------------------****----");
+ printf("\n Press N For New Passenger:-");
+ scanf("%s",&dw);
+ } while (dw=='N' || dw=='n');
+    getch();
+    return 0;
+}
+
+int AC()
+{
+    int age;
+    float TD,fare,Dfare;
+    char dn,s;
+printf("\n\t Enter Total Distance Travle:-");
+scanf("%f",&TD);
+printf("\t Enter Day[D] or Night[N]:-");
+scanf("%s",&dn);
+printf("\t Enter Passenger Age:-");
+scanf("%d",&age);
+printf("\n-------------------------------------------------------------------------------------------------");
+if(dn=='D'&& age<=60)
+{
+  fare=TD*22.5;
+  printf("\n Your Total Fare is:-%f",fare);
+  printf("\n-------------------------------------------------------------------------------------------------");  
+}
+else if(dn=='N' && age<=60)
+{
+  fare=TD*28;
+  printf("\n Your Total Fare is:-%f",fare);
+  printf("\n-------------------------------------------------------------------------------------------------");  
+}
+else
+{
+    if(dn=='D'&& age>60)
+    {
+        fare=TD*18.5;
+        printf("\t Your Total Fare is :-%f",fare);
+        printf("\n-------------------------------------------------------------------------------------------------");
+    }
+    else
+    {
+        if(dn=='N'&& age>60)
+    {
+        fare=TD*22;
+        printf("\t Your Total Fare is :-%f",fare);
+        printf("\n-------------------------------------------------------------------------------------------------");
+    }
+    }
+}
+
+
+printf("\n\t Are You A Student[Y/N]:-");
+scanf("%s",&s);
+if(s=='Y' || s=='y')
+{
+    Dfare=fare*0.8;
+    printf("\n Discounted Fare is:-%f",Dfare);
+    printf("\n-------------------------------------------------------------------------------------------------"); 
+}
+else
+{
+    printf("\n You Are Not Elegible \n Your Total Fare is:-%f",fare);
+    printf("\n-------------------------------------------------------------------------------------------------");
+}
+}
+
+int NAC()
+{
+    int age;
+    float TD,fare,Dfare;
+    char dn,s;
+ printf("\n\t Enter Total Distance Travle:-");
+ scanf("%f",&TD);
+ printf("\t Enter Day[D] or Night[N]:-");
+ scanf("%s",&dn);
+ printf("\t Enter Passenger Age:-");
+scanf("%d",&age);
+printf("\n-------------------------------------------------------------------------------------------------");
+if(dn=='D'&& age<=60)
+{
+  fare=TD*17;
+  printf("\n Your Total Fare is:-%f",fare);
+  printf("\n-------------------------------------------------------------------------------------------------");  
+}
+else if(dn=='N' && age<=60)
+{
+  fare=TD*21;
+  printf("\n Your Total Fare is:-%f",fare);
+  printf("\n-------------------------------------------------------------------------------------------------");  
+}
+else
+{
+    if(dn=='d'&& age>60)
+    {
+        fare=TD*10;
+        printf("\t Your Total Fare is :-%f",fare);
+        printf("\n-------------------------------------------------------------------------------------------------");
+    }
+    else
+    {
+        if(dn=='d'&& age>60)
+    {
+        fare=TD*12;
+        printf("\t Your Total Fare is :-%f",fare);
+        printf("\n-------------------------------------------------------------------------------------------------");
+    }
+    }
+}
+
+
+printf("\n\t Are You A Student[Y/N]:-");
+scanf("%s",&s);
+if(s=='Y' || s=='y')
+{
+    Dfare=fare*0.8;
+    printf("\n Discounted Fare is:-%f",Dfare);
+    printf("\n-------------------------------------------------------------------------------------------------"); 
+}
+else
+{
+    printf("\n You Are Not Elegible \n Your Total Fare is:-%f",fare);
+    printf("\n-------------------------------------------------------------------------------------------------");
+}
+}
